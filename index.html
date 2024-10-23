@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Real Estate Kashmir</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: #fffdd0;
+      }
+
+      body > nav {
+        background-color: #fffdd0 !important;
+      }
+
+      .logo {
+        width: 8%;
+      }
+
+      #navbarNav > ul > li > a {
+        color: #e42126;
+        font-weight: bold;
+      }
+
+      #navbarNav > ul > li > a:hover {
+        color: #1f82c0;
+      }
+
+      .navbar-toggler-icon {
+        background-color: #1f82c0;
+        border-radius: 5px;
+      }
+
+      button.navbar-toggler {
+        outline: none;
+      }
+
+      #navbarNav > ul > li > a {
+        margin-right: 25px;
+      }
+
+      body > nav > img {
+        margin-left: 50px;
+      }
+
+      #navbarNav > ul > li:nth-child(4) {
+        margin-right: 50px;
+      }
+
+      .hero {
+        background-image: url("/assets/img/header.png");
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 4rem;
+      }
+      .hero {
+        position: relative;
+        height: 100vh; /* Full height of the viewport */
+      }
+
+      .hero-content {
+        position: absolute;
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust positioning */
+        background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+        padding: 20px; /* Add padding around the text */
+        border-radius: 8px; /* Optional: Add rounded corners */
+        text-align: center; /* Center the text */
+      }
+
+      .hero h1 {
+        color: white; /* Text color */
+        font-size: 2.5rem; /* Font size */
+        margin: 0; /* Remove default margin */
+      }
+
+      @keyframes fadeInSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px); /* Start slightly lower */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0); /* End at original position */
+        }
+      }
+
+      .hero h1 {
+        color: white; /* Text color */
+        font-size: 2.5rem; /* Font size */
+        margin: 0; /* Remove default margin */
+        animation: fadeInSlideUp 10s ease forwards; /* Add animation */
+      }
+
+      #about > div > h2 {
+        color: #1f82c0;
+      }
+
+      #about,
+      #contact {
+        display: flex; /* Enable flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text */
+        height: 100vh; /* Full height of the viewport */
+      }
+
+      .container {
+        /* Optional: Add some padding or margins if necessary */
+        padding: 20px; /* Adjust padding as needed */
+      }
+
+      #properties {
+        background-color: #fffdd0;
+      }
+
+      #properties > div > h2 {
+        color: #1f82c0;
+      }
+
+      .property-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .btn-primary {
+        background-color: #1f82c0;
+      }
+
+      #contact > div > h2 {
+        color: #1f82c0;
+      }
+
+      .main-color {
+        color: #1f82c0;
+      }
+
+      /* Back to Top Button */
+      #backToTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Place the button 20px from the bottom */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it appears on top of other content */
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #1f82c0; /* Dark background */
+        color: white; /* White text */
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      /* Button hover effect */
+      #backToTopBtn:hover {
+        background-color: #333; /* Darker background on hover */
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          width: 25%;
+        }
+
+        body > nav > img {
+          margin-left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <img class="navbar-brand logo" src="/assets/img/logo.png" alt="logo" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#properties">Properties</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero vh-100">
+      <div class="hero-content">
+        <h1>We Understand Your Dreams</h1>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 text-center vh-100">
+      <div class="container">
+        <h2>About Us</h2>
+        <p class="lead">
+          We are a leading real estate company committed to helping you find the
+          perfect home or property.
+        </p>
+        <!-- <a href="#" class="btn btn-primary">Get Started</a> -->
+        <a href="tel:+919103072998" class="btn btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-3">Featured Properties</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card property-card mb-4">
+              <a href="/assets/img/p1.png">
+                <img src="/assets/img/p1.png" alt="Property 1" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Beautiful House</h5>
+                <p class="card-text">3 Bed, 3 Bath, 1 Hall</p>
+                <button
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#property1Modal"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <!-- Property 1 Modal -->
+            <div
+              class="modal fade"
+              id="property1Modal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="property1ModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="property1ModalLabel">
+                      Beautiful House Details
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img
+                      src="/assets/img/p1.png"
+                      class="img-fluid mb-3"
+                      alt="Property 1"
+                    />
+                    <p>3 Bed, 3 Bath, 1 Hall</p>
+                    <p>Price: xxxxxxxx</p>
+                    <p>
+                      Land: 10 marlas milkiyat 70 mtrs from National Highway
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+
+                    <a href="tel:+919103072998" class="btn btn-primary">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Property 1 Modal -->
+          </div>
+          <div class="col-md-4">
+            <div class="card property-card mb-4">
+              <a href="/assets/img/p2.png">
+                <img src="/assets/img/p2.png" alt="Property 2" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Beautiful House</h5>
+                <p class="card-text">3 Bed, 3 Bath, 1 Hall</p>
+                <button
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#property2Modal"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Property 2 Modal -->
+          <div
+            class="modal fade"
+            id="property2Modal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="property2ModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="property2ModalLabel">
+                    Beautiful House Details
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    src="/assets/img/p2.png"
+                    class="img-fluid mb-3"
+                    alt="Property 2"
+                  />
+                  <p>3 Bed, 3 Bath, 1 Hall</p>
+                  <p>Price: xxxxxxxx</p>
+                  <p>
+                    Land: 11.5 marlas milkiyat 500 mtr’s from National Highway
+                    Drainage & Macadam Road
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <a href="tel:+919103072998" class="btn btn-primary">
+                    Contact
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Property 2 Modal -->
+          <div class="col-md-4">
+            <div class="card property-card mb-4">
+              <a href="/assets/img/p3.png">
+                <img src="/assets/img/p3.png" alt="Property 3" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Fully Furnished House</h5>
+                <p class="card-text">3 Bed, 2 Bath, 1 Hall</p>
+                <button
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#property3Modal"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 3 Modal -->
+          <div
+            class="modal fade"
+            id="property3Modal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="property3ModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="property3ModalLabel">
+                    Fully Furnished House Details
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    src="/assets/img/p3.png"
+                    class="img-fluid mb-3 justify-content-center"
+                    alt="Property 3"
+                  />
+                  <p>3 Bed, 2 Bath, 1 Hall</p>
+                  <p>Price: xxxxxxxx</p>
+                  <p>Land: 10 marlas milkiyat 70 mtrs from National Highway</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <a href="tel:+919103072998" class="btn btn-primary">
+                    Contact
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Property 3 Modal -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-center vh-100">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p class="lead">
+          Get in touch with us for more information about available properties.
+        </p>
+        <a href="tel:+919103072998" class="btn btn-primary"> Contact Now </a>
+
+        <div class="mt-3 display-3">
+          <a
+            class="mx-2 main-color"
+            href="https://www.instagram.com/realestatekashmir"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <a
+          class="main-color"
+          href="https://www.instagram.com/realestatekashmir"
+          target="_blank"
+        >
+          <small class="main-color">instagram</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2024 Real Estate Kashmir. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // When the user scrolls down 100px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          backToTopBtn.style.display = "block"; // Show button
+        } else {
+          backToTopBtn.style.display = "none"; // Hide button
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // Smooth scroll effect
+        });
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
