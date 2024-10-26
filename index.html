@@ -39,193 +39,239 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
+      /* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
 
-      body {
-        font-family: "Cinzel", serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        background-color: whitesmoke;
-      }
+body {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: whitesmoke;
+}
 
-      body > nav {
-        background-color: whitesmoke !important;
-      }
+/* Navigation Styles */
+.navbar {
+  background-color: whitesmoke !important;
+}
 
-      .logo {
-        width: 8%;
-      }
+.logo {
+  width: 8%;
+}
 
-      #navbarNav > ul > li > a {
-        color: #e42126;
-        font-weight: bold;
-      }
+.navbar img {
+  margin-left: 50px;
+}
 
-      #navbarNav > ul > li > a:hover {
-        color: #1f82c0;
-      }
+#navbarNav ul li a {
+  color: #e42126;
+  font-weight: bold;
+  margin-right: 25px;
+}
 
-      .navbar-toggler-icon {
-        background-color: #1f82c0;
-        border-radius: 5px;
-      }
+#navbarNav ul li a:hover {
+  color: #1f82c0;
+}
 
-      button.navbar-toggler {
-        outline: none;
-      }
+#navbarNav ul li:nth-child(4) {
+  margin-right: 50px;
+}
 
-      #navbarNav > ul > li > a {
-        margin-right: 25px;
-      }
+.navbar-toggler {
+  outline: none;
+}
 
-      body > nav > img {
-        margin-left: 50px;
-      }
+.navbar-toggler-icon {
+  background-color: #1f82c0;
+  border-radius: 5px;
+}
 
-      #navbarNav > ul > li:nth-child(4) {
-        margin-right: 50px;
-      }
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("./assets/img/header.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-      .hero {
-        background-image: url("./assets/img/header.png");
-        background-size: cover;
-        background-position: center;
-        height: 400px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 4rem;
-      }
-      .hero {
-        position: relative;
-        /* height: 100vh;  */
-      }
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
 
-      .hero-content {
-        position: absolute;
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Adjust positioning */
-        /* Black with 60% opacity */
-        /* background-color: rgba(0, 0, 0, 0.6);  */
-        padding: 20px; /* Add padding around the text */
-        border-radius: 8px; /* Optional: Add rounded corners */
-        text-align: center; /* Center the text */
-      }
+.hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+  animation: fadeInSlideUp 5s ease-out forwards;
+}
 
-      .hero h1 {
-        color: white; /* Text color */
-        font-size: 2.5rem; /* Font size */
-        margin: 0; /* Remove default margin */
-        font-weight: bold;
-      }
+/* Build Section */
+.build {
+  position: relative;
+  height: 100vh;
+  background-image: url("./assets/img/build-section.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-      @keyframes fadeInSlideUp {
-        0% {
-          opacity: 0;
-          transform: translateY(20px); /* Start slightly lower */
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0); /* End at original position */
-        }
-      }
+.build-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
 
-      .hero h1 {
-        color: white; /* Text color */
-        font-size: 2.5rem; /* Font size */
-        margin: 0; /* Remove default margin */
-        animation: fadeInSlideUp 5s ease-out forwards; /* Add animation */
-      }
+.build h1 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+}
 
-      #about > div > h2 {
-        color: #1f82c0;
-      }
+.build .container p {
+  text-align: left;
+}
 
-      #about,
-      #contact {
-        display: flex; /* Enable flexbox */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        text-align: center; /* Center text */
-        height: 100vh; /* Full height of the viewport */
-      }
+/* About and Contact Sections */
+#about,
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
 
-      .container {
-        /* Optional: Add some padding or margins if necessary */
-        padding: 20px; /* Adjust padding as needed */
-      }
+#about h2,
+#contact h2,
+#properties h2 {
+  color: #1f82c0;
+}
 
-      #properties {
-        background-color: whitesmoke;
-      }
+/* Properties Section */
+#properties {
+  background-color: whitesmoke;
+}
 
-      #properties > div > h2 {
-        color: #1f82c0;
-      }
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-      .property-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+.card-title, .card-text {
+  font-size: 13px;
+}
 
-      .btn-primary {
-        background-color: #1f82c0;
-      }
+/* Button Styles */
+.cta-btn {
+  margin-top: 200px;
+}
 
-      #contact > div > h2 {
-        color: #1f82c0;
-      }
+.cta-btn > a {
+  background-color: #d2042d !important;
+  border: none !important;
+  width: 150px;
+}
 
-      .main-color {
-        color: #1f82c0;
-      }
+.cta-btn > a:hover {
+  background-color: #1f82c0 !important;
+}
 
-      /* Back to Top Button */
-      #backToTopBtn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed position */
-        bottom: 20px; /* Place the button 20px from the bottom */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it appears on top of other content */
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background-color: #1f82c0; /* Dark background */
-        color: white; /* White text */
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 10px;
-      }
+.btn-primary {
+  background-color: #1f82c0;
+}
 
-      /* Button hover effect */
-      #backToTopBtn:hover {
-        background-color: #333; /* Darker background on hover */
-      }
+/* Back to Top Button */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #1f82c0;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
 
-      @media (max-width: 768px) {
-        .logo {
-          width: 25%;
-        }
+#backToTopBtn:hover {
+  background-color: #333;
+}
 
-        body > nav > img {
-          margin-left: 0px;
-        }
-      }
+/* Utility Classes */
+.main-color {
+  color: #1f82c0;
+}
 
-      .section-divider {
-        border-top: 2px solid #000; /* Thickness and color of the divider */
-        margin: 40px auto; /* Center the divider and add spacing */
-        width: 80%; /* Set the width to 80% */
-      }
+.section-divider {
+  border-top: 2px solid #000;
+  margin: 40px auto;
+  width: 80%;
+}
+
+/* Animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .navbar img {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 25%;
+  }
+  
+  .cta-btn {
+    margin-top: 300px;
+  }
+  
+  .cta-btn > a {
+    width: 100px;
+  }
+}
+
+      
     </style>
   </head>
   <body>
@@ -245,15 +291,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#properties">Properties</a>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#build">Build With Us</a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#properties">Properties</a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
@@ -265,6 +312,11 @@
     <section class="hero">
       <div class="hero-content">
         <h1>We Understand Your Dreams</h1>
+      </div>
+
+      <div class="cta-btn">
+        <a href="https://wa.me/+919103072998?text=Hello,%20I%20need%20help%20with..." type="button" class="btn btn-primary btn-lg">Sell</a>
+        <a href="#properties" type="button" class="btn btn-primary btn-lg">Buy</a>
       </div>
     </section>
 
@@ -283,11 +335,32 @@
           market.
         </p>
         <!-- <a href="#" class="btn btn-primary">Get Started</a> -->
-        <a href="tel:+919103072998" class="btn btn-primary">Get Started</a>
+        <!-- <a href="tel:+919103072998" class="btn btn-primary">Get Started</a> -->
       </div>
     </section>
 
     <div class="section-divider"></div>
+
+    <!-- Build with us Section -->
+    <section id="build" class="build">
+      <div class="container">
+        <h1>Why Work with Us to Build?</h1>
+        <p>
+          Local Knowledge: We are the only ones who truly understand Kashmir.
+          <br />We can help you with anything from choosing the perfect plot to
+          negotiating local laws.
+        </p>
+        <div class="cta-btn">
+          <!-- <a type="button" class="btn btn-primary ">Build</a> -->
+          <a
+            class="btn btn-primary btn-lg"
+            href="https://wa.me/+919103072998?text=Hello,%20I%20need%20help%20with..."
+            target="_blank"
+            >Build</a
+          >
+        </div>
+      </div>
+    </section>
 
     <!-- Properties Section -->
     <section id="properties" class="py-5">
@@ -523,23 +596,64 @@
         </p>
         <a href="tel:+919103072998" class="btn btn-primary"> Contact Now </a>
 
-        <div class="mt-3 display-3">
-          <a
-            class="mx-2 main-color"
-            href="https://www.instagram.com/realestatekashmir"
-            target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+        <div class="container my-3">
+          <div class="row">
+            <div class="col text-center">
+              <div class="d-flex justify-content-center social-icons">
+                <a href="https://www.facebook.com/kashmir.realestate.3?mibextid=ZbWKwL" target="_blank" class="mx-3">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+             
+                </a>
+                <a href="https://www.instagram.com/realestatekashmir" target="_blank" class="mx-3">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@RealestateKashmir" target="_blank" class="mx-3">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a
-          class="main-color"
-          href="https://www.instagram.com/realestatekashmir"
-          target="_blank"
-        >
-          <small class="main-color">instagram</small>
-        </a>
+
+        
+        
       </div>
     </section>
+
+    <div class="container py-5">
+      <div class="row align-items-center">
+          <!-- Text Content -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="pr-lg-5">
+                  <h2 class="h1 mb-2">Our Founder</h2>
+                  <h3 class="h2 mb-4 text-primary">Sheikh Asif</h3>
+                  
+                  <div class="founder-text">
+                      <p class="mb-4">
+                          The founder of Real Estate Kashmir, Sheikh Asif, is an enthusiastic investor, builder, and entrepreneur committed to changing the Kashmiri real estate sector. He has established a reputation for trust, creativity, and customer-focused solutions because to his keen understanding of real estate investments and construction.
+                      </p>
+                      
+                      <p class="mb-4">
+                          Sheikh Asif founded Real Estate Kashmir with the goal of assisting people in making more informed investments by streamlining the purchasing, selling, and construction procedures in the area. His goal is to enable everyone to profit from and have access to real estate.
+                      </p>
+                      
+                      <p class="mb-4">
+                          Beyond business, Sheikh Asif helps people thrive by sharing his expertise on real estate investing and financial success. Real Estate Kashmir is still moving forward under his direction, one prosperous project at a time.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Founder Image -->
+          <div class="col-lg-6">
+              <div class="founder-image">
+                  <img src="./assets/img/founder.png" alt="Sheikh Asif - Founder of Real Estate Kashmir" class="img-fluid w-100 rounded shadow">
+              </div>
+          </div>
+      </div>
+  </div>
+    
 
     <!-- Back to Top Button -->
     <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
@@ -548,7 +662,7 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-      <p>&copy; 2024 Real Estate Kashmir. All Rights Reserved.</p>
+      <p>&copy; 2024 IntentBold. All Rights Reserved.</p>
     </footer>
 
     <script>
